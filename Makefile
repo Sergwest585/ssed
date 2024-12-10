@@ -22,7 +22,7 @@ clean:
 	rm $(name)
 	rm -r build/*
 
-test:
+test: $(name)
 	echo 123abc123456 > $(test_dir)file.txt
 	./$(name) $(test_dir)file.txt 's/456/abc/'
 	if [ $(file < $(test_dir)file.txt) = 123abc123abc ]; then echo "replace work"; else echo "replace error"; fi
