@@ -2,6 +2,7 @@
 #ifndef SSED_H
 #define SSED_H
 
+[[noreturn]] void error(int code, char *fmt, ...);
 
 void sed_parse_cmd(char *filename, char *cmd);
 void sed_replace(char *filename, char *before, char *after);

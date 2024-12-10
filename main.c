@@ -3,23 +3,10 @@
 #include "files.h"
 
 #include <string.h>
-#include <stdlib.h>
 #include <stdarg.h>
 #include <stdio.h>
 
 char *program_name;
-
-[[noreturn]] void error(int code, char *fmt, ...) {
-    va_list args;
-    va_start(args, fmt);
-
-    char *err_msg;
-    vsscanf(err_msg, fmt, args);
-    perror(err_msg);
-    
-    va_end(args);
-    exit(code);
-}
 
 void help_message() {
     printf("%s <filename> <cmd>\n%s <filename> <flag> <pattern>\n", program_name, program_name);
